@@ -1,11 +1,11 @@
-# React.js template
+A simple currency converter, see how much your Swedish cash is worth in different countries.
 
-This template has been generated using `create-react-app`, then cleaned up a little.
+Summary of coming improvements I would add with more time:
+Error handling 
+Add try catch into the fetch
+Make nice error messages
+Headers for the api key to separate api key from url
+Animation and flag on the info section
+Separate layout for desktop and mobile
+Make nice component for the list item, with my reusable card
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
-
-## Features
-* Styled components
-* React router
-* React hooks
-* Eslint
