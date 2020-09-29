@@ -16,7 +16,7 @@ background-image: url(${Background});
 const CountryList = styled.section`
 width: 300px;
 overflow: scroll;
-border: 10px solid #355d39;
+border: 10px solid #95b391;
   `;
 
 const Cashin = styled.section`
