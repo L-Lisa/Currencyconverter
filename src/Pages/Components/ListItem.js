@@ -6,9 +6,11 @@ width: 300px;
 background: #f7f2f2;
 padding: 10px;
 `;
+
 const Info = styled.div`
 color:#1c1c1c;
 `;
+
 const Country = styled.div`
 width: auto;
 text-align: left;

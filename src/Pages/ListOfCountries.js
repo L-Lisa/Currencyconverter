@@ -12,12 +12,12 @@ padding: 130px;
 overflow: scroll;
 background-image: url(${Background});
 `;
+
 const CountryList = styled.section`
 width: 300px;
 overflow: scroll;
 border: 10px solid #355d39;
   `;
-
 
 const Cashin = styled.section`
 width:300px;
@@ -59,7 +59,6 @@ export const ListOfCountries = () => {
         }
         CountriesList()
     }, []);
-
 
     return (
         <Wrapper>
