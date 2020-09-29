@@ -1,5 +1,7 @@
 A simple currency converter, see how much your Swedish cash is worth in different countries.
 
+This was a short project, built with React and styled compontnes. 
+
 Summary of coming improvements I would add with more time:
 Error handling, 
 Add try catch into the fetch,
@@ -9,3 +11,4 @@ Animation and flag on the info section,
 Separate layout for desktop and mobile,
 Make nice component for the list item, with my reusable card,
 
+view it live here: lisas-converter.netlify.app
