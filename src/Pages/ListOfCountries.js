@@ -25,19 +25,20 @@ background:#95b391;
 padding: 10px;
 text-align: center;
 display:flex;
+align-items: center;
 flex-direction:column;
 align-content:center;
 `;
 
 const CashinPut = styled.div`
 background:#f7f2f2;
-width:inherit;
+width:200px;
 height:2.5rem;
 text-align:center;
 input{
 font-size:2rem;
 font-size: 2rem;
-width: -webkit-fill-available;
+width: inherit;
 text-align: center;
 }
 `;
