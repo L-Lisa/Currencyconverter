@@ -17,6 +17,9 @@ const CountryList = styled.section`
 width: 300px;
 overflow: scroll;
 border: 10px solid #95b391;
+display: flex;
+    flex-direction: column;
+    align-items: center;
   `;
 
 const Cashin = styled.section`
@@ -34,10 +37,9 @@ const CashinPut = styled.div`
 background:#f7f2f2;
 width:200px;
 height:2.5rem;
-text-align:center;
+width: inherit;
 input{
 font-size:2rem;
-font-size: 2rem;
 width: inherit;
 text-align: center;
 }
