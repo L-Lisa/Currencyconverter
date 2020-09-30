@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components/macro";
 
 const ListSection = styled.article`
-width: 300px;
+width: 280px;
 background: #f7f2f2;
 padding: 10px;
 `;
@@ -28,20 +28,17 @@ export const ListItem = ({ amount, name, currencies, population, flag, capital }
     const [XchangeE, setXchangeE] = useState()
     const bucks = `${currencies[0].code}`.toString()
 
-    useEffect(() => {
-
+    const GetMoney = () => {
         const Exchange = async () => {
-            const res = await fetch(` http://data.fixer.io/api/latest?access_key=f5ba67ddbe62d125023653a7aca65f3a=${bucks}`)
+            const res = await fetch(` http://data.fixer.io/api/latest?access_key=b36112c44ba87ac0ceb95dd5eaf320df&symbols=${bucks}`)
             const jsonRes = await res.json()
             if (jsonRes.rates !== undefined || jsonRes.success === true) {
-                console.log(jsonRes)
-                console.log(jsonRes.rates[bucks])
                 setXchangeE(jsonRes.rates[bucks])
             }
         }
-
         const RateSEK = async () => {
-            const res = await fetch(`http://data.fixer.io/api/latest?access_key=f5ba67ddbe62d125023653a7aca65f3a=SEK`)
+            const res = await fetch(`
+            http://data.fixer.io/api/latest?access_key=b36112c44ba87ac0ceb95dd5eaf320df&symbols=SEK`)
             const jsonRes = await res.json()
             if (jsonRes.rates !== undefined || jsonRes.success === true) {
                 setSwedRate(jsonRes.rates["SEK"])
@@ -49,21 +46,24 @@ export const ListItem = ({ amount, name, currencies, population, flag, capital }
         }
         Exchange()
         RateSEK()
-    }, [amount, bucks]);
+    }
 
+    const handlecountryClick = () => {
+        setShowInfo(!showInfo)
+        if (!showInfo) { GetMoney() }
 
+    }
     const Answer1E = amount / swedRate
     const FinalAnswer = Answer1E * XchangeE
     const FinalShort = FinalAnswer.toFixed(2)
     return (
 
         < ListSection >
-            <Country onClick={() => setShowInfo(!showInfo)}>{name}</Country>
+            <Country onClick={handlecountryClick}>{name}</Country>
             {showInfo && <Info>
-                <h2>Capital city:{capital}</h2>
-                <p>Total Population:{population}</p>
+                <h2>Capital city: {capital}</h2>
+                <p>Total Population: {population}</p>
                 <p>Your SEK is worth:{FinalShort} -{bucks} here! </p>
-
             </Info>}
         </ ListSection>
     )

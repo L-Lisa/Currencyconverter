@@ -18,8 +18,8 @@ width: 300px;
 overflow: scroll;
 border: 10px solid #95b391;
 display: flex;
-    flex-direction: column;
-    align-items: center;
+flex-direction: column;
+align-items: center;
   `;
 
 const Cashin = styled.section`
@@ -40,8 +40,8 @@ height:2.5rem;
 width: inherit;
 input{
 font-size:2rem;
-width: inherit;
 text-align: center;
+width: 295px;
 }
 `;
 
@@ -52,8 +52,10 @@ export const ListOfCountries = () => {
     const ALL_URL = "https://restcountries.eu/rest/v2/all"
 
     const HandleSetAmount = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        SetAmount(e.target.value);
     }
+
     useEffect(() => {
         const CountriesList = async () => {
             const res = await fetch(ALL_URL)
@@ -66,9 +68,9 @@ export const ListOfCountries = () => {
     return (
         <Wrapper>
             <Cashin>
-                <h1>How much is your cash worth in different countries, enter SEK &#8595; </h1>
+                <h1>How much is your cash worth in the different countries, enter SEK &#8595; </h1>
                 <CashinPut> <input type="number" value={amount} onChange={HandleSetAmount}
-                    onChange={e => SetAmount(e.target.value)} /></CashinPut>
+                /></CashinPut>
             </Cashin>
             <CountryList>
                 {countries.map(country =>
