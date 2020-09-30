@@ -3,7 +3,6 @@ import { ListOfCountries } from "./Pages/ListOfCountries"
 
 
 
-
 export const App = () => {
   return (
     <>
